@@ -16,7 +16,6 @@ Entendiendo que en programación existen muchas formas de dar solución a los re
 4. ✅ **Validar formularios** tanto en el front-end como en el back-end.
 5. 🌱 **Crear un seeder** con 2 artículos.
 6. 📧 **Notificar por correo electrónico** cuando se crea un artículo.
-```
 
 ## 🛠️ Comandos de Ayuda
 
