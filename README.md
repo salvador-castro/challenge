@@ -1,6 +1,3 @@
-Aquí tienes el README mejorado en formato Markdown:
-
-```markdown
 # 🚀 Challenge PHP-Laravel
 
 El **Challenge PHP-Laravel** es un proyecto incompleto creado con el framework Laravel. El desafío consiste en identificar los elementos faltantes, resolver los requerimientos funcionales solicitados y cumplir con las mejores prácticas de programación. 🧑‍💻 Debes entregar el proyecto en una nueva rama en el repositorio de GitHub.
