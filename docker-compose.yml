@@ -1,0 +1,44 @@
+version: '3'
+
+networks:
+  challenge:
+    driver: bridge
+
+services:
+  db:
+    image: mysql
+    platform: linux/amd64
+    restart: unless-stopped
+    ports:
+      - 2207:3306
+    volumes:
+      - ./dockerData/db/:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks:
+      - challenge
+  
+  phpmyadmin:
+    image: phpmyadmin
+    restart: unless-stopped
+    links:
+      - db
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    networks:
+      - challenge
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - challenge
