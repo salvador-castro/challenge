@@ -356,8 +356,8 @@ class ComposerStaticInita4d4adc347ef6e6759fc8394ba8c1c70
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -459,8 +459,8 @@ class ComposerStaticInita4d4adc347ef6e6759fc8394ba8c1c70
         ),
         'Fruitcake\\Cors\\' => 
         array (
-            0 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
-            1 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+            0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+            1 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
         ),
         'Faker\\' => 
         array (
@@ -593,6 +593,7 @@ class ComposerStaticInita4d4adc347ef6e6759fc8394ba8c1c70
         'App\\Mail\\ProductosMailable' => __DIR__ . '/../..' . '/app/Mail/ProductosMailable.php',
         'App\\Models\\Comprobante' => __DIR__ . '/../..' . '/app/Models/Comprobante.php',
         'App\\Models\\Movimiento' => __DIR__ . '/../..' . '/app/Models/Movimiento.php',
+        'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\Producto' => __DIR__ . '/../..' . '/app/Models/Producto.php',
         'App\\Models\\Red' => __DIR__ . '/../..' . '/app/Models/Red.php',
         'App\\Models\\Transaccion' => __DIR__ . '/../..' . '/app/Models/Transaccion.php',

@@ -49,6 +49,7 @@ return array(
     'App\\Mail\\ProductosMailable' => $baseDir . '/app/Mail/ProductosMailable.php',
     'App\\Models\\Comprobante' => $baseDir . '/app/Models/Comprobante.php',
     'App\\Models\\Movimiento' => $baseDir . '/app/Models/Movimiento.php',
+    'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\Producto' => $baseDir . '/app/Models/Producto.php',
     'App\\Models\\Red' => $baseDir . '/app/Models/Red.php',
     'App\\Models\\Transaccion' => $baseDir . '/app/Models/Transaccion.php',
