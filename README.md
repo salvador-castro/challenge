@@ -54,4 +54,4 @@ Se realizan todos los puntos. En el punto donde se pide crear un seeder con 2 ar
 SeederCon2Articulos.php
 ```
 
-Se realizo con MacbookPro y se uso XAMPP para levantar la BBDD.
+Se realizo con MacbookPro con SO Sonoma 14.4 y se uso XAMPP para levantar la BBDD.
