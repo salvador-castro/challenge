@@ -54,7 +54,7 @@
         ================================================== -->
         <div class="page-sidebar">
             <a class="logo-box" href="{{ route('admin.home') }}">
-                <span>👨🏻‍💻 FINANCHECK</span>
+                <span>👨🏻‍💻 CHALLENGE</span>
                 {{-- <img class="logoLegis" src="{{ asset('img/logosNew/LogoLegislaturahorizontal.png') }}" alt="Logo Legis"> --}}
                 <i class="icon-radio_button_unchecked" id="fixed-sidebar-toggle-button"></i>
                 <i class="icon-close" id="sidebar-toggle-button-close"></i>

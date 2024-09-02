@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -32,7 +31,9 @@ class ProductosMailable extends Mailable
      */
     public function envelope()
     {
-        // TODO: Implementar método.
+        return new Envelope(
+            subject: 'Nuevo Producto Creado'
+        );
     }
 
     /**
@@ -42,7 +43,9 @@ class ProductosMailable extends Mailable
      */
     public function content()
     {
-        // TODO: Implementar método.
+        return new Content(
+            view: 'emails.productos.email' // Usando la vista existente
+        );
     }
 
     /**

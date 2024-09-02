@@ -2,12 +2,12 @@
     'components' => ['datatables', 'bootstrap_toggle'],
 ])
 
-@section('title', 'Productos')
+@section('title', 'Crear Producto')
 
 @section('panel-header')
     @include('layouts.crizal._panel_header', [
-        'title' => 'Nuevo Artículo',
-        'icon' => 'fas fa-newspaper',
+        'title' => 'Crear Producto',
+        'icon' => 'fas fa-plus-circle',
         'subtitle' => 'Panel Principal',
         'links' => null,
     ])
@@ -20,11 +20,25 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Crear Nuevo</h4>
-
                     <form action="{{ route('producto.store') }}" method="POST">
                         @csrf
-                        @include('productos._form')
+                        <div class="form-group">
+                            <label for="titulo">Titulo:</label>
+                            <input type="text" name="titulo" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea name="descripcion" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio:</label>
+                            <input type="number" name="precio" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoría:</label>
+                            <input type="text" name="categoria" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Crear Producto</button>
                     </form>
                 </div>
             </div>

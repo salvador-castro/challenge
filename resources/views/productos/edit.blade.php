@@ -9,7 +9,7 @@
 
 @section('panel-header')
     @include('layouts.crizal._panel_header', [
-        'title' => 'Editar Articulo',
+        'title' => 'Editar Artículo',
         'icon' => 'fas fa-edit',
         'subtitle' => 'Panel Principal',
         'links' => null
@@ -19,12 +19,11 @@
 @section('content')
     @include('flash::message')
 
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('producto.update', $producto) }}" method="post">
+                    <form action="{{ route('producto.update', $producto->id) }}" method="post">
                         @csrf
                         @method('put')
                         @include('productos._form')
@@ -33,7 +32,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 @push('scripts')

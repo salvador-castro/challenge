@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(PermissionTableSeeder::class);
         $this->call(GamblingTableSeeder::class);
+        $this->call(SeederCon2Articulos::class); // Línea añadida
         // \App\Models\User::factory(10)->create();
 
         $this->call(ProductosSeeder::class);

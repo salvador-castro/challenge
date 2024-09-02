@@ -2,29 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductRequest;
-use App\Mail\ProductosMailable;
-use App\Models\Producto;
-use Exception;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
+use App\Models\Product; 
+use Illuminate\Http\Request;
 
-class ProductoController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct() {
-        $this->middleware(['verifyAdminRole']);
-    }
-
     public function index()
     {
-        // code here...
+        // Obtener todos los productos de la base de datos
+        $productos = Product::all();
+
+        // Retornar la vista de la lista de productos
+        return view('products.index', compact('productos'));
     }
 
     /**
@@ -34,7 +28,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        // code here...
+        // Retornar la vista de creación de un producto
+        return view('productos.create');
     }
 
     /**
@@ -43,14 +38,21 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
-        try {
-            // code here...
-        } catch (Exception $e) {
-            flash("Error: {$e->getMessage()}")->error()->important();
-            // code here...
-        }
+        // Validar los datos del formulario
+        $validatedData = $request->validate([
+            'titulo' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'precio' => 'required|numeric',
+            'categoria' => 'required|string|max:255',
+        ]);
+
+        // Crear un nuevo producto con los datos validados
+        Product::create($validatedData);
+
+        // Redirigir a la lista de productos con un mensaje de éxito
+        return redirect()->route('products.index')->with('success', 'Producto creado exitosamente.');
     }
 
     /**
@@ -61,7 +63,11 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        // Obtener el producto por su ID
+        $producto = Product::findOrFail($id);
+
+        // Retornar la vista con los detalles del producto
+        return view('products.show', compact('producto'));
     }
 
     /**
@@ -70,9 +76,13 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        // code here...
+        // Obtener el producto por su ID
+        $producto = Product::findOrFail($id);
+
+        // Retornar la vista de edición con los datos del producto
+        return view('products.edit', compact('producto'));
     }
 
     /**
@@ -82,9 +92,24 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-       // code here...
+        // Validar los datos del formulario
+        $validatedData = $request->validate([
+            'titulo' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'precio' => 'required|numeric',
+            'categoria' => 'required|string|max:255',
+        ]);
+
+        // Obtener el producto por su ID
+        $producto = Product::findOrFail($id);
+
+        // Actualizar el producto con los datos validados
+        $producto->update($validatedData);
+
+        // Redirigir a la lista de productos con un mensaje de éxito
+        return redirect()->route('products.index')->with('success', 'Producto actualizado exitosamente.');
     }
 
     /**
@@ -93,8 +118,15 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        // code here...
+        // Obtener el producto por su ID
+        $producto = Product::findOrFail($id);
+
+        // Eliminar el producto
+        $producto->delete();
+
+        // Redirigir a la lista de productos con un mensaje de éxito
+        return redirect()->route('products.index')->with('success', 'Producto eliminado exitosamente.');
     }
 }
