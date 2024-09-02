@@ -53,3 +53,5 @@ Se realizan todos los puntos. En el punto donde se pide crear un seeder con 2 ar
 ```bash
 SeederCon2Articulos.php
 ```
+
+Se realizo con MacbookPro y se uso XAMPP para levantar la BBDD.
