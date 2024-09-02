@@ -49,4 +49,7 @@ Entendiendo que en programación existen muchas formas de dar solución a los re
   [Laravel Documentation](https://laravel.com)
 
 
-Se realizan todos los puntos. En el punto donde se pide crear un seeder con 2 articulos, se realiza con el nombre   ```bash SeederCon2Articulos.php ```.
+Se realizan todos los puntos. En el punto donde se pide crear un seeder con 2 articulos, se realiza con el nombre 
+```bash
+SeederCon2Articulos.php
+```
